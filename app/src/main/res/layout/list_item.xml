@@ -1,0 +1,92 @@
+<!-- res/layout/list_item_product.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:weightSum="2">
+
+    <!-- Produk Kiri -->
+    <LinearLayout
+        android:id="@+id/item_left"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:layout_marginEnd="4dp">
+
+        <ImageView
+            android:id="@+id/image_left"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/name_left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fujifilm XA5"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/spec_left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="24.1MP"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/price_left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rp10.000.-"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Produk Kanan -->
+    <LinearLayout
+        android:id="@+id/item_right"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:layout_marginStart="4dp">
+
+        <ImageView
+            android:id="@+id/image_right"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/name_right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fujifilm XA5"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/spec_right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="24.1MP"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/price_right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rp10.000.-"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

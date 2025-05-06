@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/black"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DaftarActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="30dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/logo_voto" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:textColor="@color/white"
+            android:layout_marginBottom="6dp"
+            android:layout_marginTop="-20dp"
+            android:text="Nama" />
+        <EditText
+            android:padding="14dp"
+            android:textColor="@color/black"
+
+            android:inputType="textEmailAddress"
+            android:id="@+id/namaDa"
+            android:backgroundTint="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/radius" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:textColor="@color/white"
+            android:layout_marginBottom="6dp"
+            android:text="Alamat" />
+        <EditText
+            android:padding="14dp"
+            android:textColor="@color/black"
+
+            android:inputType="textEmailAddress"
+            android:id="@+id/alamatDa"
+            android:backgroundTint="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/radius" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:textColor="@color/white"
+            android:layout_marginBottom="6dp"
+            android:text="Telepon" />
+        <EditText
+            android:padding="14dp"
+            android:textColor="@color/black"
+
+            android:inputType="textEmailAddress"
+            android:id="@+id/teleponDa"
+            android:backgroundTint="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/radius" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp"
+            android:text="Email" />
+        <EditText
+            android:padding="14dp"
+            android:textColor="@color/black"
+
+            android:inputType="textEmailAddress"
+            android:id="@+id/emailDa"
+            android:backgroundTint="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/radius" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:textColor="@color/white"
+            android:text="Password" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            app:endIconMode="password_toggle"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content">
+            <EditText
+                android:padding="14dp"
+                android:textColor="@color/black"
+
+                android:id="@+id/passwordDa"
+                android:backgroundTint="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/radius" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:textColor="@color/white"
+            android:text="Konfirmasi password*" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            app:endIconMode="password_toggle"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content">
+            <EditText
+                android:padding="14dp"
+                android:id="@+id/konfirmasiDa"
+                android:textColor="@color/black"
+
+                android:backgroundTint="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:background="@drawable/radius" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:id="@+id/btnDaftar"
+            android:background="@drawable/radius"
+            android:text="Daftar"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/kuning"
+            android:layout_height="50dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="end"
+            android:layout_marginRight="5dp"
+            android:gravity="end"
+            android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Sudah memiliki akun? "
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:gravity="end"
+                android:text="Login disini"
+                android:textColor="@color/kuning" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/black"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="30dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/logo_voto" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp"
+            android:text="Email" />
+
+        <EditText
+            android:padding="14dp"
+            android:inputType="textEmailAddress"
+            android:id="@+id/email"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:foregroundTint="@color/black"
+            android:backgroundTint="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/radius" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:textColor="@color/white"
+            android:layout_marginBottom="10dp"
+            android:text="Password" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            app:endIconMode="password_toggle"
+            android:layout_height="wrap_content">
+            <EditText
+                android:padding="14dp"
+                android:id="@+id/password"
+                android:foregroundTint="@color/black"
+                android:textColorHint="@color/black"
+                android:backgroundTint="@color/white"
+                android:layout_width="match_parent"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/radius" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:id="@+id/btnLogin"
+            android:background="@drawable/radius"
+            android:text="Login"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/kuning"
+            android:layout_height="50dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Belum memiliki akun? "
+                android:textColor="@color/white"
+                android:layout_marginRight="4dp"
+                android:layout_height="wrap_content"/>
+<!--            <androidx.appcompat.widget.AppCompatButton-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:backgroundTint="@color/black"-->
+<!--                android:id="@+id/daftar"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:textColor="@color/kuning"-->
+<!--                android:text="Daftar disini"-->
+<!--                />-->
+            <TextView
+                android:id="@+id/daftar"
+                android:layout_width="wrap_content"
+                android:text="Daftar disini"
+                android:textColor="@color/kuning"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

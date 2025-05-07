@@ -93,12 +93,51 @@ class HomeActivity : AppCompatActivity() {
             }
         })
 
-        val stringRequest = object : StringRequest(
+//        val stringRequest = object : StringRequest(
+//            Request.Method.GET, Connection().url + "tbl_barang",
+//            Response.Listener { response ->
+//                try {
+//                    val jsonArray = JSONArray(response)
+//                    for (i in 0 until jsonArray.length()) {
+//                        val obj = jsonArray.getJSONObject(i)
+//                        val imageUrl = Connection().imgurl + obj.getString("id_barang")
+//                        models.add(
+//                            ProdukModel(
+//                                obj.getString("id_barang"),
+//                                obj.getString("nama_barang"),
+//                                obj.getString("harga_satuan"),
+//                                imageUrl
+//                            )
+//                        )
+//                    }
+//                    productAdapter = ProdukAdapter(
+//                        applicationContext,
+//                        R.layout.menu_item,
+//                        models,
+//                        id,
+//                        nama,
+//                        harga,
+//                        jumlah,
+//                    )
+//                    listView.adapter = productAdapter
+//                } catch (e: Exception) {
+//                    e.printStackTrace()
+//                }
+//            },
+//            Response.ErrorListener { error ->
+//                error.printStackTrace()
+//            }
+//        ) {}
+//        requestQueue.add(stringRequest)
+
+
+        val stringRequest = object : StringRequest (
             Request.Method.GET, Connection().url + "tbl_barang",
-            Response.Listener { response ->
+            Response.Listener {
+                response->
                 try {
                     val jsonArray = JSONArray(response)
-                    for (i in 0 until jsonArray.length()) {
+                    for (i in 0 until jsonArray.length()){
                         val obj = jsonArray.getJSONObject(i)
                         val imageUrl = Connection().imgurl + obj.getString("id_barang")
                         models.add(
@@ -112,7 +151,7 @@ class HomeActivity : AppCompatActivity() {
                     }
                     productAdapter = ProdukAdapter(
                         applicationContext,
-                        R.layout.menu_item,
+                        R.layout.activity_home,
                         models,
                         id,
                         nama,
@@ -120,14 +159,16 @@ class HomeActivity : AppCompatActivity() {
                         jumlah,
                     )
                     listView.adapter = productAdapter
-                } catch (e: Exception) {
+                }catch (e:Exception){
                     e.printStackTrace()
                 }
             },
-            Response.ErrorListener { error ->
+            Response.ErrorListener {
+                error ->
                 error.printStackTrace()
             }
-        ) {}
+        )
+        {}
         requestQueue.add(stringRequest)
 //
 //        search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {

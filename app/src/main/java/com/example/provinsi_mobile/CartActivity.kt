@@ -113,7 +113,7 @@ class CartActivity : AppCompatActivity(), CartAdapter.OnQuantityChangeListener {
         listView.adapter = adapter
         val back : TextView = findViewById(R.id.back)
         back.setOnClickListener {
-            startActivity(Intent(applicationContext, HomeActivity::class.java))
+            finish()
         }
         checkout.setOnClickListener {
             val intent = Intent(this@CartActivity, CheckoutActivity::class.java)

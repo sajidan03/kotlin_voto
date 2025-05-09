@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.media.Image
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.EditText
@@ -50,29 +51,6 @@ class HomeActivity : AppCompatActivity() {
         cart.setOnClickListener{
             startActivity(Intent(this@HomeActivity, CartActivity::class.java))
         }
-//        val spinner: Spinner = findViewById(R.id.category)
-//        val categories = listOf("All", "Elektronik", "Pakaian", "Minuman", "Lainnya")
-//        val spinnerAdapter =
-//            android.widget.ArrayAdapter(this, android.R.layout.simple_spinner_item, categories)
-//        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-//        spinner.adapter = spinnerAdapter
-//
-//        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-//            override fun onItemSelected(
-//                parent: AdapterView<*>,
-//                view: View,
-//                position: Int,
-//                id: Long
-//            ) {
-//                val selectedCategory = categories[position]
-//                Toast.makeText(this@HomeActivity, "Kategori: $selectedCategory", Toast.LENGTH_SHORT)
-//                    .show()
-//            }
-//
-//            override fun onNothingSelected(parent: AdapterView<*>) {}
-//        }
-//        val total: TextView = findViewById(R.id.total)
-//        val bayar: AppCompatButton = findViewById(R.id.btnBayar)
 
         val listView: ListView = findViewById(R.id.listview)
         val requestQueue = Volley.newRequestQueue(this@HomeActivity)
@@ -85,50 +63,6 @@ class HomeActivity : AppCompatActivity() {
         akun.setOnClickListener {
             startActivity(Intent(this@HomeActivity, AkunActivity::class.java))
         }
-        search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?) = false
-            override fun onQueryTextChange(newText: String?): Boolean {
-                productAdapter.filter.filter(newText)
-                return false
-            }
-        })
-
-//        val stringRequest = object : StringRequest(
-//            Request.Method.GET, Connection().url + "tbl_barang",
-//            Response.Listener { response ->
-//                try {
-//                    val jsonArray = JSONArray(response)
-//                    for (i in 0 until jsonArray.length()) {
-//                        val obj = jsonArray.getJSONObject(i)
-//                        val imageUrl = Connection().imgurl + obj.getString("id_barang")
-//                        models.add(
-//                            ProdukModel(
-//                                obj.getString("id_barang"),
-//                                obj.getString("nama_barang"),
-//                                obj.getString("harga_satuan"),
-//                                imageUrl
-//                            )
-//                        )
-//                    }
-//                    productAdapter = ProdukAdapter(
-//                        applicationContext,
-//                        R.layout.menu_item,
-//                        models,
-//                        id,
-//                        nama,
-//                        harga,
-//                        jumlah,
-//                    )
-//                    listView.adapter = productAdapter
-//                } catch (e: Exception) {
-//                    e.printStackTrace()
-//                }
-//            },
-//            Response.ErrorListener { error ->
-//                error.printStackTrace()
-//            }
-//        ) {}
-//        requestQueue.add(stringRequest)
 
 
         val stringRequest = object : StringRequest (
@@ -159,12 +93,21 @@ class HomeActivity : AppCompatActivity() {
                         jumlah,
                     )
                     listView.adapter = productAdapter
+                    search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                        override fun onQueryTextSubmit(query: String?) = false
+                        override fun onQueryTextChange(newText: String?): Boolean {
+                            productAdapter.filter.filter(newText)
+                            return false
+                        }
+                    })
                 }catch (e:Exception){
+                    Log.d("Error adapter", "$e")
                     e.printStackTrace()
                 }
             },
             Response.ErrorListener {
                 error ->
+                Log.d("Error adapter", "$error")
                 error.printStackTrace()
             }
         )
@@ -298,5 +241,29 @@ class HomeActivity : AppCompatActivity() {
 //            )
 //            requestQueue.add(noTransaksiRequest)
 //        }
+        //        val spinner: Spinner = findViewById(R.id.category)
+//        val categories = listOf("All", "Elektronik", "Pakaian", "Minuman", "Lainnya")
+//        val spinnerAdapter =
+//            android.widget.ArrayAdapter(this, android.R.layout.simple_spinner_item, categories)
+//        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+//        spinner.adapter = spinnerAdapter
+//
+//        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+//            override fun onItemSelected(
+//                parent: AdapterView<*>,
+//                view: View,
+//                position: Int,
+//                id: Long
+//            ) {
+//                val selectedCategory = categories[position]
+//                Toast.makeText(this@HomeActivity, "Kategori: $selectedCategory", Toast.LENGTH_SHORT)
+//                    .show()
+//            }
+//
+//            override fun onNothingSelected(parent: AdapterView<*>) {}
+//        }
+//        val total: TextView = findViewById(R.id.total)
+//        val bayar: AppCompatButton = findViewById(R.id.btnBayar)
+
     }
     }
